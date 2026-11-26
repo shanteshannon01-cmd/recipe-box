@@ -55,27 +55,27 @@ input.value =""
 
 button.addEventListener("click", loadRecipe);
 
-// const dishInput = document.getElementById("dish-name");
-// const postButton = document.getElementById("post-btn");
-// const postStatus = document.getElementById("post-status");
-// const savedArea = document.getElementById("saved");
+const dishInput = document.getElementById("dish-name");
+const postButton = document.getElementById("post-btn");
+const postStatus = document.getElementById("post-status");
+const savedArea = document.getElementById("saved");
 
-// async function addDish() {
-//     savedArea.textContent = " ";
-// const response = await fetch ("https://dummyjson.com/recipes/add",
-//     {method:"POST",
-//     headers: {"Content-Type": "application/json"},
-//     body: JSON.stringify ({name:dishInput.value})
+async function addDish() {
+    savedArea.textContent = " ";
+const response = await fetch ("https://dummyjson.com/recipes/add",
+    {method:"POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify ({name:dishInput.value})
 
-// });
-//  const newDish = await response.json();
-//  console.log(newDish);
+});
+ const newDish = await response.json();
+ console.log(newDish);
 
-//  const message = document.createElement("p");
-//  message.className ="alert alert-success";
-//  message.textContent 
-//  = 'Added "' + newDish.name + '" as recipe #' + newDish.id 
-// savedArea.appendChild(message);
-//  dishInput.value="";
-// }
-// postButton.addEventListener("click", addDish);
+ const message = document.createElement("p");
+ message.className ="alert alert-success";
+ message.textContent 
+ = 'Added "' + newDish.name + '" as recipe #' + newDish.id 
+savedArea.appendChild(message);
+ dishInput.value="";
+}
+postButton.addEventListener("click", addDish);
